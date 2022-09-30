@@ -6,6 +6,7 @@
 
 
 
+
 //pos raquettes
 float posRaquettesLeftX = 50;
 float posRaquettesRightX = WIN_WIDTH - 70;
@@ -33,7 +34,8 @@ int main()
     //load font called
     Text txt;
     Font font;
-    font.loadFromFile("res/font.ttf");
+    font.loadFromFile("res/font.ttf"); 
+    txt.setFont(font);
     SetText(txt, to_string(score1) + "|" + to_string(score2));
     window.setVerticalSyncEnabled(true);
     window.setFramerateLimit(60);
@@ -93,8 +95,6 @@ int main()
 
 void SetText(Text& txt, String str)
 {
-    Font font;
-    txt.setFont(font);
     txt.setString(str);
     txt.setCharacterSize(50);
     txt.setFillColor(Color::Red);
